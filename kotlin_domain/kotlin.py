@@ -633,7 +633,8 @@ class KotlinDomain(Domain):
 
         for refname, (docname, type, signature) in _iteritems(self.data['objects']):
             for to in type_order:
-                if refname == to + ' ' + test_target:
+                # if refname == to + ' ' + test_target:
+                if refname == test_target:
                     node = make_refnode(builder, fromdocname, docname, signature, contnode, test_target)
                     return node
         if test_target in kotlin_reserved:
